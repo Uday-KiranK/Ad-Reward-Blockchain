@@ -112,7 +112,18 @@
       if (!window.ethereum) throw new Error("Please install MetaMask to interact with the blockchain.");
 
       // STRICT IDENTITY GUARD: Ensure the active wallet perfectly matches their session identity
-      const activeAccs = await window.ethereum.request({ method: "eth_accounts" });
+      let activeAccs = await window.ethereum.request({ method: "eth_accounts" });
+      
+      // If not connected yet (because they entered it manually), prompt connection
+      if (!activeAccs || activeAccs.length === 0) {
+        try {
+          activeAccs = await window.ethereum.request({ method: "eth_requestAccounts" });
+        } catch (err) {
+          alert("MetaMask connection is required to access the dashboard.");
+          return logOut();
+        }
+      }
+
       if (!activeAccs.length || activeAccs[0].toLowerCase() !== currentAccount.toLowerCase()) {
         alert(`Identity Mismatch! Please switch your MetaMask back to your Verified Wallet: ${shortAddr(currentAccount)}`);
         return logOut();
