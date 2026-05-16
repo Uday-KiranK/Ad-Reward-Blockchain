@@ -282,8 +282,8 @@
       if (c.advertiser.toLowerCase() !== currentAccount.toLowerCase()) continue;
 
       const action = c.active
-        ? `<button class="btn-secondary" style="width:100%" onclick="deactivateCampaign(${i})">Stop Campaign</button>`
-        : `<button class="btn-primary" style="width:100%" onclick="withdrawRemainingBudget(${i})">Reclaim Budget</button>`;
+        ? `<button data-campaign-id="${i}" class="btn-secondary deactivate-btn" style="width:100%">Stop Campaign</button>`
+        : `<button data-campaign-id="${i}" class="btn-primary reclaim-btn" style="width:100%">Reclaim Budget</button>`;
 
       cList.push(`
       <div class="campaign-card">
@@ -531,6 +531,8 @@
       watchAd(Number(e.target.dataset.campaignId));
     } else if (e.target.classList.contains('deactivate-btn')) {
       deactivateCampaign(Number(e.target.dataset.campaignId));
+    } else if (e.target.classList.contains('reclaim-btn')) {
+      withdrawRemainingBudget(Number(e.target.dataset.campaignId));
     }
   });
 
