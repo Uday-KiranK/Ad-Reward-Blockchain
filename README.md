@@ -2,7 +2,7 @@
 
 AdReward is a Web2.5 decentralized advertising platform that leverages Ethereum smart contracts and a cryptographic Proof-of-View (PoV) mechanism. It allows advertisers to fund campaigns with ERC-20 tokens (AdRewardToken - ART) and rewards users directly for watching ads, completely bypassing centralized intermediaries.
 
-## 🌟 Features
+## Features
 - **Direct Rewards:** Users earn ART directly to their MetaMask wallets for watching ads.
 - **Sybil Resistance:** Phone-based OTP verification ensures 1 human = 1 wallet.
 - **Proof-of-View (PoV):** Cryptographic ECDSA signatures guarantee that only legitimate, completed watch sessions can claim on-chain rewards.
@@ -11,7 +11,7 @@ AdReward is a Web2.5 decentralized advertising platform that leverages Ethereum 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Blockchain:** Ethereum, Solidity, Hardhat, Ethers.js (v6)
 - **Backend:** Node.js, Express.js, PostgreSQL
 - **Frontend:** Vanilla HTML5, CSS3, JavaScript
@@ -19,7 +19,7 @@ AdReward is a Web2.5 decentralized advertising platform that leverages Ethereum 
 
 ---
 
-## ⚙️ Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 1. [Node.js](https://nodejs.org/) (v18+)
@@ -28,7 +28,7 @@ Before you begin, ensure you have the following installed:
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### 1. Clone the Repository
 ```bash
@@ -79,7 +79,7 @@ DB_PORT=5432
 
 ---
 
-## 💻 Running the Application
+## Running the Application
 
 To run the application locally, you will need to open **two separate terminal windows**.
 
@@ -103,7 +103,7 @@ npx serve .
 
 ---
 
-## ⛓️ Smart Contract Deployment
+## Smart Contract Deployment
 
 If you make changes to the Solidity contracts in `/contracts`, you will need to re-deploy them.
 
@@ -118,11 +118,11 @@ npx hardhat run scripts/deploy.js --network localhost
 npx hardhat run scripts/deploy.js --network sepolia
 ```
 
-**⚠️ IMPORTANT:** After deploying, you **MUST** copy the new contract addresses generated in the terminal and paste them into the `config` object at the very top of `frontend/app.js`.
+**IMPORTANT:** After deploying, you **MUST** copy the new contract addresses generated in the terminal and paste them into the `config` object at the very top of `frontend/app.js`.
 
 ---
 
-## 📱 How to Use the App
+## How to Use the App
 
 1. **Sign Up:** Go to `http://localhost:3000/auth.html`. Enter your phone number to receive an OTP (which will log to your backend terminal window).
 2. **Link Wallet:** Once verified, MetaMask will prompt you to connect. This links your phone number to your exact Ethereum address.
@@ -132,7 +132,7 @@ npx hardhat run scripts/deploy.js --network sepolia
 
 ---
 
-## 👥 Contributors
+## Contributors
 - Rajesh M
 - Uday Kiran K
 - **Supervisor:** Dr. Sunil Kumar P V (IIIT Dharwad)
